@@ -52,7 +52,7 @@ services:
         image: nethermind/nethermind
         container_name: nethermind
         restart: unless-stopped
-        command: '--config xdai --Metrics.Enabled true --JsonRpc.Host 0.0.0.0 --JsonRpc.Enabled true --Network.MaxActivePeers=256'
+        command: '--config xdai --Metrics.Enabled true --Metrics.PushGatewayUrl http://pushgateway:9091/metrics --JsonRpc.Host 0.0.0.0 --JsonRpc.Enabled true --Network.MaxActivePeers=256 '
         expose:
             - 8545
         ports:
